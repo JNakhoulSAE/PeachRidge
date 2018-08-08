@@ -1,11 +1,4 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "test.h"
+#include "PeachRidgeFunctionLibrary.h"
 
-test::test()
-{
-}
-
-test::~test()
-{
-}
