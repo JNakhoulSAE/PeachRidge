@@ -14,7 +14,8 @@ class PEACHRIDGE_API UPeachRidgeFunctionLibrary : public UBlueprintFunctionLibra
 {
 	GENERATED_BODY()
 
-		
+		UFUNCTION(BlueprintCallable, Category = "Custom Functions")
+		static void GetLookAt(FVector origin, FVector location);
 	
 	
 };

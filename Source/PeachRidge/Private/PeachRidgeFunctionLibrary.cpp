@@ -2,3 +2,7 @@
 
 #include "PeachRidgeFunctionLibrary.h"
 
+void UPeachRidgeFunctionLibrary::GetLookAt(FVector origin, FVector location) {
+
+
+}
