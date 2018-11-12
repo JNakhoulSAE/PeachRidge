@@ -8,57 +8,57 @@
 
 void UPeachRidgeFunctionLibrary::TakePhoto(TArray<AActor*> speciesArray, TArray<FString> scannableSpecies, TArray<FString> scannedSpecies) {
 
-	bool canStartScanning = false;
+	//bool canStartScanning = false;
 
-	// Get Player Controller
-	TObjectIterator<APlayerController> controller;
-	if (!controller) return;
+	//// Get Player Controller
+	//TObjectIterator<APlayerController> controller;
+	//if (!controller) return;
 
-	// Camera Fade (Flash)
-	APlayerCameraManager* cameraManager = UGameplayStatics::GetPlayerCameraManager(controller->_getUObject(), 0);
+	//// Camera Fade (Flash)
+	//APlayerCameraManager* cameraManager = UGameplayStatics::GetPlayerCameraManager(controller->_getUObject(), 0);
 
-	cameraManager->StartCameraFade(0.5, 0, 0.5, FLinearColor::White, false, true);
+	//cameraManager->StartCameraFade(0.5, 0, 0.5, FLinearColor::White, false, true);
 
-	// Check for valid selected species
-	for (int i = 0; i < 2; i++)
-	{
-		if (speciesArray.IsValidIndex(i)) {
-			canStartScanning = true;
-		}
-	}
+	//// Check for valid selected species
+	//for (int i = 0; i < 2; i++)
+	//{
+	//	if (speciesArray.IsValidIndex(i)) {
+	//		canStartScanning = true;
+	//	}
+	//}
 
-	if (canStartScanning) {
+	//if (canStartScanning) {
 
-		speciesArray.Reserve(speciesArray.Num());
-		for (int i = 0; i < speciesArray.Num(); ++i)
-		{
-			if (speciesArray.IsValidIndex(i)) {
+	//	speciesArray.Reserve(speciesArray.Num());
+	//	for (int i = 0; i < speciesArray.Num(); ++i)
+	//	{
+	//		if (speciesArray.IsValidIndex(i)) {
 
-				// Adding species to list of all scanned species
-				AActor* species = speciesArray[i];
+	//			// Adding species to list of all scanned species
+	//			AActor* species = speciesArray[i];
 
-				scannableSpecies.Reserve(scannableSpecies.Num());
-				for (int i = 0; i < scannableSpecies.Num(); ++i)
-				{
-					if (species->GetActorLabel().Contains(scannableSpecies[i])) {
-						if (GEngine) {
-							GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, "Scanned " + scannableSpecies[i]);
-						}
+	//			scannableSpecies.Reserve(scannableSpecies.Num());
+	//			for (int i = 0; i < scannableSpecies.Num(); ++i)
+	//			{
+	//				if (species->GetActorLabel().Contains(scannableSpecies[i])) {
+	//					if (GEngine) {
+	//						GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, "Scanned " + scannableSpecies[i]);
+	//					}
 
-						scannedSpecies.AddUnique(scannableSpecies[i]);
-					}
-				}
+	//					scannedSpecies.AddUnique(scannableSpecies[i]);
+	//				}
+	//			}
 
-				// Clear billboard component
+	//			// Clear billboard component
 
-			}
-		}
+	//		}
+	//	}
 
-		canStartScanning = false;
-	}
-	else {
-		if (GEngine) {
-			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, "No species to scan.");
-		}
-	}
+	//	canStartScanning = false;
+	//}
+	//else {
+	//	if (GEngine) {
+	//		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, "No species to scan.");
+	//	}
+	//}
 }
