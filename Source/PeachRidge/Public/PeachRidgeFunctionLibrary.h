@@ -15,7 +15,6 @@ class PEACHRIDGE_API UPeachRidgeFunctionLibrary : public UBlueprintFunctionLibra
 	GENERATED_BODY()
 
 		UFUNCTION(BlueprintCallable, Category = "Custom Functions")
-		static void GetLookAt(FVector origin, FVector location);
-	
-	
+		static void TakePhoto(TArray<AActor*> speciesArray, TArray<FString> scannableSpecies, TArray<FString> scannedSpecies);
+
 };
